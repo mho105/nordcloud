@@ -9,8 +9,8 @@ import { functionName } from '../infrastructure/lib/network-station-stack';
   });
   const response = await client.send(command);
 
-  const asciiDecoder = new TextDecoder('utf-8');
-  const results = JSON.parse(asciiDecoder.decode(response.Payload));
+  const decoder = new TextDecoder('utf-8');
+  const results = JSON.parse(decoder.decode(response.Payload));
 
   console.table(results);
 })();
